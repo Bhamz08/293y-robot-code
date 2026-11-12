@@ -1,4 +1,6 @@
-# VEX Robot Code + lemlib-ext
+# 293Y Robot Code + lemlib-ext
+
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
 Competition code for VEX V5RC team **293Y** (Great Valley High School, 2025–26 season), written in C++ with
 [PROS](https://pros.cs.purdue.edu/) and [LemLib](https://github.com/LemLib/LemLib) 0.5.5. It also includes
@@ -41,6 +43,17 @@ instead. Nothing runs unless you construct and start these classes, so the robot
 
 Full equations, design notes, and usage are in [`docs/lemlib-ext.md`](docs/lemlib-ext.md).
 
+## Project structure
+
+```
+src/main.cpp, src/intake.cpp    robot code: drivetrain, autonomous routines, intake state machine
+src/lemlib-ext/                 lemlib-ext sources (odometry, PID, odometry math)
+include/lemlib-ext/             lemlib-ext headers
+tests/lemlib_ext_tests.cpp      host unit tests for lemlib-ext
+docs/lemlib-ext.md              equations, design notes and usage for lemlib-ext
+include/, firmware/             PROS, LemLib, LVGL and robodash headers and prebuilt libraries (needed to build)
+```
+
 ## Tests
 
 The math in lemlib-ext doesn't depend on PROS, so it has host unit tests (`tests/lemlib_ext_tests.cpp`). Among other
@@ -77,3 +90,8 @@ Install the [PROS CLI](https://pros.cs.purdue.edu/v5/getting-started/index.html)
 pros make
 pros upload
 ```
+
+## License
+
+MIT, see [LICENSE](LICENSE). The prebuilt PROS, LemLib, LVGL and robodash libraries in `firmware/` and
+`include/` keep their own licenses.
